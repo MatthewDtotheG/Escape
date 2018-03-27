@@ -8,8 +8,8 @@ l1 = Location.create(name: "New York")
 l2 = Location.create(name: "Chicago")
 l3 = Location.create(name: "Los Angeles")
 
-u1 = User.create(name: "Kenny", location: l1, email: "kenneth.c.lehr@gmail.com", password_digest: "1234")
-u2 = User.create(name: "Matt", location: l2, email: "mattsemail@gmail.com", password_digest: "1234")
+u1 = User.create(name: "Kenny", username: "kendawg", age: 26, location: l1, email: "kenneth.c.lehr@gmail.com", password_digest: "1234")
+u2 = User.create(name: "Matt", username: "mdg", age: 27, location: l2, email: "mattsemail@gmail.com", password_digest: "1234")
 
 i1 = Item.create(name: "snowboard", description: "a very nice snowboard", price: "1000", seller: u1)
 i2 = Item.create(name: "skis", description: "a dope pair of skis", price: "2", seller: u1)
