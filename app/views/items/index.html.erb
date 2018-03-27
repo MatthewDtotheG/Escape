@@ -1,6 +1,4 @@
 <% @items.each do |item|%>
-  <ul>
-    <li><%= item.name %> </li>
-    <li><%= item.description %></li>
-  </ul>
+<%= link_to item.name, item_path(item.id) %>
+<%= item.description %>
 <% end %>

@@ -22,6 +22,7 @@
           <a class="nav-item nav-link" href="/users/new">Create Account</a>
           <% else %>
           <a class="nav-item nav-link" href="/logout">Logout</a>
+          <a class="nav-item nav-link" href="/users/<%= session[:user_id] %>">Profile</a>
           <% end %>
 
         </div>
