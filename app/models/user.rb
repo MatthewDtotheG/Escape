@@ -22,4 +22,12 @@ class User < ApplicationRecord
     all_ratings.inject(:+).to_f/all_ratings.size
   end
 
+  def total_profit
+    reservations.map {|res| res.total_price}.inject(:+)
+  end
+
+  def already_reserved?
+  end
+
+
 end
