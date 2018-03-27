@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :reviews
   resources :locations
   resources :items, only: :show
-  resources :users, only: [:index, :new, :show, :create]
+  resources :users, only: [:index, :new, :show, :create, :edit]
 
   # resources :users do
   #   resources :items

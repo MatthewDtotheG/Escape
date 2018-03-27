@@ -1,33 +1,19 @@
 class ReservationsController < ApplicationController
-  def index
-    @Reservations = Reservation.all
-  end
-
-  def new
-    @Reservation = Reservation.new
-  end
-
-  def show
-    @Reservation = Reservation.find(params[:id])
-  end
-
-  def edit
-    @Reservation = Reservation.find(params[:id])
-  end
 
   def create
-    @Reservation = Reservation.new(reservation_params)
-    if @Reservation.save
-      redirect_to @Reservation
+    @reservation = Reservation.new(item_id: params[:reservation][:item_id], rent_start: formatted_start_date, rent_end: formatted_end_date, buyer_id: session[:user_id])
+    byebug
+    if @reservation.save
+      redirect_to '/'
     else
-      render :new
+      redirect_to ''
     end
   end
 
   def update
-    @Reservation = Reservation.find(params[:id])
-    if @Reservation = Reservation.update(reservation_params)
-      redirect_to @Reservation
+    @reservation = Reservation.find(params[:id])
+    if @reservation = Reservation.update(reservation_params)
+      redirect_to @reservation
     else
       render :edit
     end
@@ -38,8 +24,20 @@ class ReservationsController < ApplicationController
       redirect_to @item
   end
 
-private
-  def reservation_params
-    params.require(:Reservation).permit(:rent_start, :rent_end, :item_id, :buyer_id)
-  end
+  private
+
+    def formatted_start_date
+      dates = Array.new
+      dates = params[:reservation].values
+      dates[1] = '%02i' % dates[1] if dates [1].size == 1
+      dates[0..2].join("-")
+    end
+
+    def formatted_end_date
+      dates = Array.new
+      dates = params[:reservation].values
+      dates[4] = '%02i' % dates[4] if dates [4].size == 1
+      dates[3..5].join("-")
+    end
+
 end
