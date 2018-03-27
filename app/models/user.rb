@@ -9,6 +9,17 @@ class User < ApplicationRecord
   validates :name, :username, :email, :age, :location, :password_digest, presence: true
   validates :username, :email, uniqueness: true
 
+
+  def seller_check
+    sellers = Item.all.map {|x| x.seller_id}
+    sellers.include?(self.id)
+  end
+
+  def buyer_check
+    buyers = Reservation.all.map {|x| x.buyer_id}
+    buyers.include?(self.id)
+  end
+
   def location_name=(name)
     self.location = Location.find_or_create_by(name: name)
   end

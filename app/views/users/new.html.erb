@@ -5,34 +5,35 @@
     <title>Escape Outdoors</title>
   </head>
   <body>
+    <h1>Please create an account</h1>
 
     <div class="container">
-    <%= form_for @user do |f| %>
-        <div class="form-group">
-         <%= f.label :name %>
-         <%= f.text_field :name, :class => 'form-control col-4'%>
+      <%= form_for @user do |f| %>
+          <div class="form-group">
+           <%= f.label :name %>
+           <%= f.text_field :name, :class => 'form-control col-4'%>
 
-         <%= f.label :username %>
-         <%= f.text_field :username, :class => 'form-control col-4'%>
+           <%= f.label :username %>
+           <%= f.text_field :username, :class => 'form-control col-4'%>
 
-         <%= f.label :email %>
-         <%= f.text_field :email, :class => 'form-control col-4'%>
+           <%= f.label :email %>
+           <%= f.text_field :email, :class => 'form-control col-4'%>
 
-         <%= f.label :age %>
-         <%= f.text_field :age, :class => 'form-control col-4'%>
+           <%= f.label :age %>
+           <%= f.text_field :age, :class => 'form-control col-4'%>
 
-         <%= f.label :location_name %>
-         <%= f.text_field :location_name, :class => 'form-control col-4'%>
+           <%= f.label :location_name %>
+           <%= f.text_field :location_name, :class => 'form-control col-4'%>
 
-         <%= f.label :password %>
-         <%= f.password_field :password, :class => 'form-control col-4'%>
+           <%= f.label :password %>
+           <%= f.password_field :password, :class => 'form-control col-4'%>
 
-         <%= f.label :password_confirmation %>
-         <%= f.password_field :password_confirmation, :class => 'form-control col-4'%> <br>
+           <%= f.label :password_confirmation %>
+           <%= f.password_field :password_confirmation, :class => 'form-control col-4'%> <br>
 
-         <%= f.submit :class => 'btn btn-primary col-4' %>
-        </div>
-      <% end %>
+           <%= f.submit :class => 'btn btn-primary col-4' %>
+          </div>
+        <% end %>
     </div>
   </body>
 </html>
