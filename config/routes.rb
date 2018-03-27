@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # resources :users do
   #   resources :items
   # end
-
+  get "seller", to: "users#seller", as: "seller"
   get "login", to: "sessions#new", as: "login"
   get "logout", to: "sessions#destroy", as: "logout"
   post "sessions", to: "sessions#create", as: "sessions"

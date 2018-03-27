@@ -28,10 +28,19 @@
       <img src="/arrow.png" class="blink-image"></img>
     </a> -->
 
-
     <div id="arrow" class="test_div">
       <a href="/items/available">View all Rentals</a>
     </div>
+
+    <% if !logged_in? %>
+    <div id="arrow" class="test_div">
+      <a href="users/new">Rent your equipment</a>
+    </div>
+    <% else %>
+    <div id="arrow" class="test_div">
+      <a href="/seller">Rent your equipment</a>
+    </div>
+    <% end %>
 
   </body>
 </html>
