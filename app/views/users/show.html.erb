@@ -1,9 +1,77 @@
 
 <!-- Display user profile if buyer display bought items -->
 <% if seller_check = true %>
-  <h1> Seller stuff</h1>
+<div class="container">
+
+  <div class="profile_info">
+    <img class="profpic" src="/IMG2.jpg" alt="">
+    <h2> <%= @user.name %></h2>
+    <h2> <%= @user.email %></h2>
+    <h2> <%= @user.location.name %></h2>
+  </div>
+
+    <div class="row">
+      <div class="card col-3" style="width: 18rem;">
+        <img class="card-img-top" src="http://via.placeholder.com/500x350" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+
+      <div class="card col-3" style="width: 18rem;">
+        <img class="card-img-top" src="http://via.placeholder.com/500x350" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+
+      <div class="card col-3" style="width: 18rem;">
+        <img class="card-img-top" src="http://via.placeholder.com/500x350" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+
+      <div class="card col-3" style="width: 18rem;">
+        <img class="card-img-top" src="http://via.placeholder.com/500x350" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+    
 <% else %>
-  <h1> Buyer stuff</h1>
+
+    <div class="row">
+      <div class="card col-3" style="width: 18rem;">
+        <img class="card-img-top" src="http://via.placeholder.com/500x350" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+
+      <div class="card col-3" style="width: 18rem;">
+        <img class="card-img-top" src="http://via.placeholder.com/500x350" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+
+      <div class="card col-3" style="width: 18rem;">
+        <img class="card-img-top" src="http://via.placeholder.com/500x350" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+
+      <div class="card col-3" style="width: 18rem;">
+        <img class="card-img-top" src="http://via.placeholder.com/500x350" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>
 
 <!-- <h1><%= @user.name %></h1>
