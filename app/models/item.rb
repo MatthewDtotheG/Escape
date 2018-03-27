@@ -4,9 +4,9 @@ class Item < ApplicationRecord
   has_many :reviews, :through => :reservations
   has_many :buyers, :class_name => "User", :through => :reservations
 
+  def self.sort_by_price
+    Item.order(:price)
+  end
 
-
-
-
-
+  
 end
