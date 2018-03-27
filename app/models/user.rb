@@ -6,12 +6,11 @@ class User < ApplicationRecord
   has_many :reviews, :foreign_key => "buyer_id"
   has_many :reservations, through: :items
 
-  validates :name, :username, :email, :age, :location_name, :password, presence: true
-  validates :name, :username, :email, :age, :location_name, :password, uniqueness: true
+  validates :name, :username, :email, :age, :location, :password, presence: true
+  validates :username, :email, uniqueness: true
 
   def location_name=(name)
-    loc = Location.find_or_create_by(name: name)
-    self.location = loc
+    self.location = Location.find_or_create_by(name: name)
   end
 
   def location_name

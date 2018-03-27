@@ -9,6 +9,12 @@
   </head>
 
   <body>
+    <h1>Escape Outdoors</h1>
+    <% if !logged_in? %>
+      <%= button_to "Login", login_path %>
+    <% else %>
+      <%= button_to "Log out", logout_path, method: :post %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
