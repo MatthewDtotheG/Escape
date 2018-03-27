@@ -17,4 +17,9 @@ class User < ApplicationRecord
     self.location
   end
 
+  def avg_rating
+    all_ratings = reviews.map {|r| r.rating}
+    all_ratings.inject(:+).to_f/all_ratings.size
+  end
+
 end
