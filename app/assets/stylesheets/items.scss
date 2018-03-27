@@ -1,3 +1,81 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.HOME_TITLE {
+	max-width: 100%;
+
+	div {
+		  line-height: 120%;
+      margin-left: 26%;
+		  margin-top: -35%;
+		  font-size: 80px;
+		  color: white;
+		  position: absolute;
+		  z-index: 9999;
+      display: block;
+		  text-align: center;
+		  border-bottom: 1px solid white;
+	}
+
+}
+
+.blink-image {
+  margin-top: 50%;
+  width: 30px;
+  position: absolute;
+}
+
+
+.arrow {
+    position: absolute;
+    opacity: 1;
+    cursor: pointer;
+    margin: auto;
+    top: 85%;
+    left: 48%;
+    width: 80px;
+    height: 80px;
+    transition: all .5s ease-in-out;
+    z-index: 890000;
+}
+
+@-moz-keyframes blink {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+/* IE */
+@-ms-keyframes blink {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+/* Opera and prob css3 final iteration */
+@keyframes blink {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+.blink-image {
+  -moz-animation: blink normal 2s infinite ease-in-out;
+  /* Firefox */
+  -webkit-animation: blink normal 2s infinite ease-in-out;
+  /* Webkit */
+  -ms-animation: blink normal 2s infinite ease-in-out;
+  /* IE */
+  animation: blink normal 2s infinite ease-in-out;
+  /* Opera and prob css3 final iteration */ }

@@ -1,23 +1,51 @@
-<%= form_for @user do |f| %>
- <%= f.label :name %>
- <%= f.text_field :name %><br><br>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Escape Outdoors</title>
+  </head>
+  <body>
 
- <%= f.label :username %>
- <%= f.text_field :username %><br><br>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">Escape Outdoors</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="#">Sign In</a>
+          <a class="nav-item nav-link" href="/users/new">Create Account</a>
+        </div>
+      </div>
+    </nav>
 
- <%= f.label :email %>
- <%= f.text_field :email %><br><br>
+    <div class="container">
+    <%= form_for @user do |f| %>
+        <div class="form-group">
+         <%= f.label :name %>
+         <%= f.text_field :name, :class => 'form-control col-4'%>
 
- <%= f.label :age %>
- <%= f.text_field :age %><br><br>
+         <%= f.label :username %>
+         <%= f.text_field :username, :class => 'form-control col-4'%>
 
- <%= f.label :location_name %>
- <%= f.text_field :location_name %><br><br>
- 
- <%= f.label :password %>
- <%= f.password_field :password %><br><br>
+         <%= f.label :email %>
+         <%= f.text_field :email, :class => 'form-control col-4'%>
 
- <%= f.label :password_confirmation %>
- <%= f.password_field :password_confirmation %><br><br>
- <%= f.submit %>
-<% end %>
+         <%= f.label :age %>
+         <%= f.text_field :age, :class => 'form-control col-4'%>
+
+         <%= f.label :location_name %>
+         <%= f.text_field :location_name, :class => 'form-control col-4'%>
+
+         <%= f.label :password %>
+         <%= f.password_field :password, :class => 'form-control col-4'%>
+
+         <%= f.label :password_confirmation %>
+         <%= f.password_field :password_confirmation, :class => 'form-control col-4'%> <br>
+
+         <%= f.submit :class => 'btn btn-primary col-4' %>
+        </div>
+      <% end %>
+    </div>
+  </body>
+</html>
