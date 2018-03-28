@@ -1,20 +1,29 @@
-<% @items.each do |item|%>
-<%= link_to item.name, item_path(item.id) %>
-<%= item.description %>
-<% end %>
 
 
-<!-- Display user profile if buyer display bought items -->
-<div class="container">
-    <div class="row">
-      <div class="card right" style="width: 30%;">
-        <img class="card-img-top" src="/IMG1.jpg" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+<!-- Display user profile if buyer display bought items
+  user.rentals 
+-->
+
+  <div class="container">
+
+      <div class="row">
+        <% @items.each do |item|%>
+        <div class="card right" style="width: 30%;">
+          <img class="card-img-top" src="/IMG1.jpg" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text">
+            <%= link_to item.name, item_path(item.id) %>
+            <%= item.description %>
+           </p>
+          </div>
         </div>
+        <% end %>
       </div>
 
-      <div class="card right" style="width: 30%;">
+  </div>
+
+      <!-- <div class="card right" style="width: 30%;">
         <img class="card-img-top" src="/IMG1.jpg" alt="Card image cap">
         <div class="card-body">
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -26,5 +35,4 @@
         <div class="card-body">
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
-      </div>
-</div>
+      </div> -->

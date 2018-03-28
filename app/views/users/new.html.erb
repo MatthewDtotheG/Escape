@@ -5,35 +5,50 @@
     <title>Escape Outdoors</title>
   </head>
   <body>
-    <h1>Please create an account</h1>
+
 
     <div class="container">
+      <div class="row">
+        <div class="form-group col-lg-5">
+          <h3>Please create an account</h3>
+          <br>
       <%= form_for @user do |f| %>
-          <div class="form-group">
-           <%= f.label :name %>
-           <%= f.text_field :name, :class => 'form-control col-4'%>
 
-           <%= f.label :username %>
-           <%= f.text_field :username, :class => 'form-control col-4'%>
+           <%= f.label :name%>
+           <%= f.text_field :name, :class => 'form-control'%>
 
-           <%= f.label :email %>
-           <%= f.text_field :email, :class => 'form-control col-4'%>
+           <%= f.label :username%>
+           <%= f.text_field :username, :class => 'form-control'%>
 
-           <%= f.label :age %>
-           <%= f.text_field :age, :class => 'form-control col-4'%>
+           <%= f.label :email%>
+           <%= f.text_field :email, :class => 'form-control'%>
 
-           <%= f.label :location_name %>
-           <%= f.text_field :location_name, :class => 'form-control col-4'%>
+           <%= f.label :age%>
+           <%= f.text_field :age, :class => 'form-control'%>
 
-           <%= f.label :password %>
-           <%= f.password_field :password, :class => 'form-control col-4'%>
+           <%= f.label :location_name%>
+           <%= f.text_field :location_name, :class => 'form-control'%>
 
-           <%= f.label :password_confirmation %>
-           <%= f.password_field :password_confirmation, :class => 'form-control col-4'%> <br>
+           <%= f.label :password%>
+           <%= f.password_field :password, :class => 'form-control'%>
 
-           <%= f.submit :class => 'btn btn-primary col-4' %>
+           <%= f.label :password_confirmation%>
+           <%= f.password_field :password_confirmation, :class => 'form-control'%> <br>
+
+           <%= f.submit :class => 'btn btn-primary' %>
           </div>
         <% end %>
+
+          <div class="col-lg-6 login">
+              <h3>Already have an account?</h3><br>
+              <a class="btn btn-primary" href="/login" role="button">Login here</a>
+          </div>
+      </div>
     </div>
+
+
+          <button type="button" name="button"></button>
+
+
   </body>
 </html>
