@@ -4,27 +4,35 @@ class Reservation < ApplicationRecord
   belongs_to :buyer, :class_name => "User"
   has_one :review
 
-  validate :available?, :rent_start_after_rent_end?
+  validate :available?, :rent_start_after_rent_end?, :rent_start_equal_rent_end?
 
   def available?
-    Reservation.where(item_id: item.id).where.not(id: id).each do |r|
-      if r.rent_end >= rent_start && r.rent_end <= rent_end
-        errors.add(:base, "Sorry, this item isn't available during your requested dates.")
-      elsif r.rent_start <= rent_end && r.rent_start >= rent_start
-        errors.add(:base, "Sorry, this item isn't available during your requested dates.")
-      elsif rent_start <= r.rent_start && r.rent_end <= rent_end
-        errors.add(:base, "Sorry, this item isn't available during your requested dates.")
-      elsif r.rent_start <= rent_start && rent_end <= r.rent_end
-        errors.add(:base, "Sorry, this item isn't available during your requested dates.")
-      else
-        true
+    if rent_start < rent_end
+      Reservation.where(item_id: item.id).where.not(id: id).each do |r|
+        if r.rent_end >= rent_start && r.rent_end <= rent_end
+          errors.add(:base, "Sorry, this item isn't available during your requested dates!")
+        elsif r.rent_start <= rent_end && r.rent_start >= rent_start
+          errors.add(:base, "Sorry, this item isn't available during your requested dates!")
+        elsif rent_start <= r.rent_start && r.rent_end <= rent_end
+          errors.add(:base, "Sorry, this item isn't available during your requested dates!")
+        elsif r.rent_start <= rent_start && rent_end <= r.rent_end
+          errors.add(:base, "Sorry, this item isn't available during your requested dates!")
+        else
+          true
+        end
       end
     end
   end
 
   def rent_start_after_rent_end?
-    if rent_end <= rent_start
+    if rent_end < rent_start
       errors.add(:base, "Rent end date has to be after the start!")
+    end
+  end
+
+  def rent_start_equal_rent_end?
+    if rent_end = rent_start
+      errors.add(:base, "Have to rent for more than one day!")
     end
   end
 
