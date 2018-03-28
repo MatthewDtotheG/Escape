@@ -7,18 +7,7 @@ html,body{
 		padding-bottom: 200px;
 }
 
-.profile_info {
-  text-align: left;
-  margin-bottom: 30px;
-}
 
-.profpic {
-  border-radius: 50%;
-	height: 200px;
-	width: 200px;
-  margin-bottom: 30px;
-
-}
 
 // footer {
 // 	width: 100%;
@@ -32,18 +21,21 @@ html,body{
 // }
 
 nav {
-	position: absolute;
+	position: static;
 	z-index: 999999;
+
 }
 
-#big-container {
+#Container {
   width: 100%;
   height: 100%;
   position: relative;
+  overflow: hidden;
+  background-color: black;
 }
 
-#big-container video {
-  position: relative;
+#Container1 video {
+  position: absolute;
   left: 50%;
   top: 50%;
   min-width: 100%;
@@ -54,81 +46,98 @@ nav {
   transform: translate(-50%, -50%);
   z-index: 0;
   // -webkit-filter: grayscale(100%);
+   }
+
+#Container1 div {
+  position: relative;
+  z-index: 1;
 }
 
-// .HOME_TITLE {
-// 	max-width: 100%;
-//
-// 	div {
-// 		  line-height: 120%;
-//       margin-left: 26%;
-// 		  margin-top: -35%;
-// 		  font-size: 80px;
-// 		  color: white;
-// 		  position: absolute;
-// 		  z-index: 9999;
-//       display: block;
-// 		  text-align: center;
-// 		  border-bottom: 1px solid white;
-// 	}
-//
-// }
+.HOME_TITLE {
+  margin-top: 15%;
+	max-width: 100%;
+  font-size: 80px;
+  text-align: center;
+  color: white;
+}
 
-// .blink-image {
-//   margin-top: 50%;
-//   width: 30px;
-//   position: absolute;
-// }
-//
-// .arrow {
-//     position: absolute;
-//     opacity: 1;
-//     cursor: pointer;
-//     margin: auto;
-//     top: 85%;
-//     left: 48%;
-//     width: 80px;
-//     height: 80px;
-//     transition: all .5s ease-in-out;
-//     z-index: 890000;
-// }
-//
-// @-moz-keyframes blink {
-//   0% {
-//     opacity: 1; }
-//   50% {
-//     opacity: 0; }
-//   100% {
-//     opacity: 1; } }
-// @-webkit-keyframes blink {
-//   0% {
-//     opacity: 1; }
-//   50% {
-//     opacity: 0; }
-//   100% {
-//     opacity: 1; } }
-// /* IE */
-// @-ms-keyframes blink {
-//   0% {
-//     opacity: 1; }
-//   50% {
-//     opacity: 0; }
-//   100% {
-//     opacity: 1; } }
-// /* Opera and prob css3 final iteration */
-// @keyframes blink {
-//   0% {
-//     opacity: 1; }
-//   50% {
-//     opacity: 0; }
-//   100% {
-//     opacity: 1; } }
-// .blink-image {
-//   -moz-animation: blink normal 2s infinite ease-in-out;
-//   /* Firefox */
-//   -webkit-animation: blink normal 2s infinite ease-in-out;
-//   /* Webkit */
-//   -ms-animation: blink normal 2s infinite ease-in-out;
-//   /* IE */
-//   animation: blink normal 2s infinite ease-in-out;
-//   /* Opera and prob css3 final iteration */ }
+.blink-image {
+  margin-top: 50%;
+  width: 30px;
+  position: absolute;
+}
+
+.arrow {
+    position: absolute;
+    opacity: 1;
+    cursor: pointer;
+    margin: auto;
+    top: 85%;
+    left: 48%;
+    width: 80px;
+    height: 80px;
+    transition: all .5s ease-in-out;
+    z-index: 890000;
+}
+
+@-moz-keyframes blink {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+/* IE */
+@-ms-keyframes blink {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+/* Opera and prob css3 final iteration */
+@keyframes blink {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+.blink-image {
+  -moz-animation: blink normal 2s infinite ease-in-out;
+  /* Firefox */
+  -webkit-animation: blink normal 2s infinite ease-in-out;
+  /* Webkit */
+  -ms-animation: blink normal 2s infinite ease-in-out;
+  /* IE */
+  animation: blink normal 2s infinite ease-in-out;
+  /* Opera and prob css3 final iteration */ }
+
+.link_space {
+  margin-top: 500px;
+  margin-bottom: 200px;
+}
+
+.rentals, .rentals1 {
+    text-align: center;
+    font-size: 40px;
+    width: 450px;
+    display: inline-block;
+    margin-bottom: 300px;
+}
+
+.rentals1 {
+  float: right;
+}
+
+.test {
+  height: 450px;
+  width: 450px;
+}

@@ -7,49 +7,68 @@
   <body>
 
 
-
-    <div id="big-container">
-
-      <video autoplay="" loop="" muted="" poster="">
-        <source src="/mnt.mp4" type="video/mp4">
-      </video>
-
+  <div id="Container1">
+    <video autoplay="" loop="" muted="" poster="">
+      <source src="/mnt.mp4" type="video/mp4">
+    </video>
+    <div class="HOME_TITLE">
+          Escape Outdoors
     </div>
+    <a href="#arrow" class="arrow">
+      <img src="/arrow.png" class="blink-image"></img>
+    </a>
+  </div>
+
+
+  <div class="link_space">
+
+  </div>
+
 
     <!-- <img src="/WOODS.jpg" class="img-fluid" alt="Responsive image"> -->
 
-    <!-- <div class="HOME_TITLE box2">
-        <div>
-          Escape Outdoors
-        </div>
-    </div> -->
-<!--
-    <a href="#arrow" class="arrow">
-      <img src="/arrow.png" class="blink-image"></img>
-    </a> -->
+    <div class="container">
 
+        <a id="arrow" href="/items/available" class="rentals">
+          <div >
+              View all rentals
+          </div>
+          <img src="/IMG1.jpg" class="rounded test" alt="...">
+        </a>
 
-    <!-- <div class="text-center">
-      <img src="/IMG1.jpg" class="rounded" alt="...">
+        <% if !logged_in? %>
+            <a href="users/new" class="rentals1">
+              <div >
+                  Rent your equipment
+              </div>
+              <img src="/IMG2.jpg" class="rounded test" alt="...">
+
+            </a>
+        <% else %>
+          <a href="/seller" class="rentals1">
+            <div>
+                Rent your equipment
+            </div>
+            <img src="/IMG2.jpg" class="rounded test" alt="...">
+          </a>
+        <% end %>
     </div>
 
-    <div class="text-center">
-      <img src="/IMG2.jpg" class="rounded" alt="...">
-    </div> -->
 
-    <div id="arrow" class="test_div">
-      <a href="/items/available">View all Rentals</a>
-    </div>
+
+<!-- <div id="arrow" class="test_div">
+  <a href="/items/available">View all Rentals</a>
+</div>
 
     <% if !logged_in? %>
-    <div id="arrow" class="test_div">
+    <div class="test_div">
       <a href="users/new">Rent your equipment</a>
     </div>
     <% else %>
-    <div id="arrow" class="test_div">
+    <div class="test_div">
       <a href="/seller">Rent your equipment</a>
     </div>
-    <% end %>
+    <% end %> -->
 
   </body>
 </html>
