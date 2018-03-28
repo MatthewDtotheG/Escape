@@ -19,9 +19,8 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    byebug
     if @item.save
-      redirect_to '/'
+      redirect_to "/users/#{session[:user_id]}"
     else
       render :new
     end
