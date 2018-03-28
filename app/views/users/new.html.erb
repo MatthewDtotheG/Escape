@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Escape Outdoors</title>
-  </head>
-  <body>
+
+<div class="bg">
 
     <div class="container">
       <div class="row">
         <div class="form-group col-lg-5">
+          <div class="create_account">
           <h3>Please create an account</h3>
-          <br>
-      <%= form_for @user do |f| %>
+          <%= form_for @user do |f| %>
 
            <%= f.label :name%>
            <%= f.text_field :name, :class => 'form-control'%>
@@ -36,6 +31,7 @@
 
            <%= f.submit :class => 'btn btn-primary' %>
           </div>
+        </div>
         <% end %>
 
           <div class="col-lg-6 login">
@@ -44,10 +40,4 @@
           </div>
       </div>
     </div>
-
-
-          <button type="button" name="button"></button>
-
-
-  </body>
-</html>
+</div>

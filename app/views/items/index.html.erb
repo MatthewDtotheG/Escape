@@ -1,13 +1,16 @@
 <!-- Display user profile if buyer display bought items
   user.rentals
 -->
+<div class="container">
 <br>
-  <%= form_tag items_available_path, method: "get" do%>
-    <%= select_tag :category, options_for_select(Item.all_categories.unshift("All Categories")), :prompt => "Filter By Category" %>
-    <%= submit_tag "Filter Search" %>
-  <% end %>
 
-  <div class="container">
+    <%= form_tag items_available_path, method: "get" do%>
+      <%= select_tag :category, options_for_select(Item.all_categories.unshift("All Categories")), :prompt => "Filter By Category"%>
+      <%= submit_tag "Filter Search" %>
+    <% end %>
+    <br>
+
+
       <div class="row">
         <% @items.each do |item|%>
         <div class="card right" style="width: 30%;">

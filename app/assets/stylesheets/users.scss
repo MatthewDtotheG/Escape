@@ -2,9 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.container {
-  margin-top: 50px;
-}
+
 
 .profile_info {
   text-align: left;
@@ -19,10 +17,18 @@
 
 }
 
-.center {
+.center, .login_form {
   text-align: center;
 }
 
+.login_form {
+  margin-top: 22%;
+  color: white;
+}
+
+.create_account {
+  color: white;
+}
 
 .right {
    margin: 20px 18px;
@@ -34,4 +40,5 @@
 
 .login {
   float: right;
+  color: white;
 }

@@ -3,10 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 html,body{
-    height: 100%;
-		padding-bottom: 200px;
+  height: 100%;
+  margin: 0;
 }
 
+.container {
+  padding-top: 50px;
+}
 
 
 // footer {
@@ -24,14 +27,6 @@ nav {
 	position: static;
 	z-index: 999999;
 
-}
-
-#Container {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-  background-color: black;
 }
 
 #Container1 video {
@@ -140,4 +135,17 @@ nav {
 .test {
   height: 450px;
   width: 450px;
+}
+
+.bg {
+    /* The image used */
+    background-image: url("/WOODS.jpg");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
