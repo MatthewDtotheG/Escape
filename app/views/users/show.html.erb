@@ -11,16 +11,17 @@
   </div>
 
 <% if seller_check = true %>
-    <h1>Your rentals</h1>
-    
+    <h1 class="center">Your rentals</h1>
+
     <div class="row">
       <% @user.items.each do |item|%>
       <div class="card right" style="width: 30%;">
         <img class="card-img-top" src="/IMG1.jpg" alt="Card image cap">
         <div class="card-body">
           <p class="card-text">
-            <%= link_to item.name, item_path(item.id) %>
+            <%= link_to item.name, edit_item_path(item.id) %>
             <%= item.description %>
+            <%= link_to "delete", item_path(item.id), method: :delete%>
           </p>
         </div>
       </div>
@@ -31,15 +32,16 @@
 
 
 <% if buyer_check = true %>
-    <h1>Rented Items</h1>
+    <h1 class="center">Your Reservations</h1>
     <div class="row">
-      <% @user.rentals.each do |item|%>
+      <% @user.reservations.each do |res|%>
       <div class="card right" style="width: 30%;">
         <img class="card-img-top" src="/IMG1.jpg" alt="Card image cap">
         <div class="card-body">
           <p class="card-text">
-            <%= link_to item.name, item_path(item.id) %>
-            <%= item.description %>
+            <%= link_to res.item.name, edit_reservation_path(res.id) %>
+            <%= res.item.description %>
+            <%= link_to "delete", reservation_path(res.id), method: :delete%>
           </p>
         </div>
       </div>

@@ -23,7 +23,6 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    byebug
     if @item.save
       redirect_to '/'
     else
@@ -33,8 +32,8 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    if @item = Item.update(item_params)
-      redirect_to @item
+    if @item.update(item_params)
+      redirect_to user_path(session[:user_id])
     else
       render :edit
     end
@@ -42,7 +41,7 @@ class ItemsController < ApplicationController
 
   def destroy
     Item.destroy(params[:id])
-    redirect_to @item
+    redirect_to user_path(session[:user_id])
   end
 
 private
