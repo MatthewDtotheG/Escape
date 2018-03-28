@@ -11,7 +11,8 @@
   </div>
 
 <% if seller_check = true %>
-
+    <h1>Your rentals</h1>
+    
     <div class="row">
       <% @user.items.each do |item|%>
       <div class="card right" style="width: 30%;">
@@ -22,28 +23,15 @@
             <%= item.description %>
           </p>
         </div>
-        <% end %>
       </div>
+        <% end %>
+    </div>
 
 <% end %>
-      <!-- <div class="card right" style="width: 30%;">
-        <img class="card-img-top" src="/IMG1.jpg" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
 
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/IMG1.jpg" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div> -->
-
- <!--  Buyer check instead -->
 
 <% if buyer_check = true %>
-
+    <h1>Rented Items</h1>
     <div class="row">
       <% @user.rentals.each do |item|%>
       <div class="card right" style="width: 30%;">
@@ -54,23 +42,10 @@
             <%= item.description %>
           </p>
         </div>
+      </div>
         <% end %>
-      </div>
-<!--
-      <div class="card right" style="width: 30%;">
-        <img class="card-img-top" src="/IMG1.jpg" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
+    </div>
 
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/IMG1.jpg" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-    </div> -->
 <% end %>
 
 <div class="BREAK"></div>
