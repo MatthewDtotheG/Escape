@@ -2,11 +2,10 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(item_id: params[:reservation][:item_id], rent_start: formatted_start_date, rent_end: formatted_end_date, buyer_id: session[:user_id])
-    byebug
     if @reservation.save
-      redirect_to '/'
+      redirect_to '/items/available'
     else
-      redirect_to ''
+      redirect_to "/items/#{params[:item_id]}"
     end
   end
 
