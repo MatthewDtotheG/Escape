@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @reservation = Reservation.new
+    @reservation = @item.reservations.build
   end
 
   def edit

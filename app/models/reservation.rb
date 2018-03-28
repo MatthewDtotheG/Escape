@@ -9,13 +9,13 @@ class Reservation < ApplicationRecord
   def available?
     Reservation.where(item_id: item.id).where.not(id: id).each do |r|
       if r.rent_end >= rent_start && r.rent_end <= rent_end
-        errors.add(:base, "Sorry, this place isn't available during your requested dates.")
+        errors.add(:base, "Sorry, this item isn't available during your requested dates.")
       elsif r.rent_start <= rent_end && r.rent_start >= rent_start
-        errors.add(:base, "Sorry, this place isn't available during your requested dates.")
+        errors.add(:base, "Sorry, this item isn't available during your requested dates.")
       elsif rent_start <= r.rent_start && r.rent_end <= rent_end
-        errors.add(:base, "Sorry, this place isn't available during your requested dates.")
+        errors.add(:base, "Sorry, this item isn't available during your requested dates.")
       elsif r.rent_start <= rent_start && rent_end <= r.rent_end
-        errors.add(:base, "Sorry, this place isn't available during your requested dates.")
+        errors.add(:base, "Sorry, this item isn't available during your requested dates.")
       else
         true
       end
