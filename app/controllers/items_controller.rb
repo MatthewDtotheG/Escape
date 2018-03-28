@@ -50,4 +50,8 @@ private
     params.require(:item).permit(:name, :description, :price, :seller_id, :category)
   end
 
+  def format_datetime(datetime)
+    datetime.strftime("%B %e, %Y")
+  end
+
 end
