@@ -14,10 +14,10 @@
       <div class="row">
         <% @items.each do |item|%>
         <div class="card right" style="width: 30%;">
-          <img class="card-img-top" src="/IMG1.jpg" alt="Card image cap">
+          <img class="card-img-top" src="<%= item.image_grabber %>" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">
-            <%= link_to item.name, item_path(item.id) %> 
+            <%= link_to item.name, item_path(item.id) %>
             <%= item.description %>
            </p>
           </div>
