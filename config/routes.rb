@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   root 'welcome#welcome'
-  resources :reservations, only: [:create]
+  resources :reservations, only: [:edit, :update, :create, :destroy]
   get "items/available", to: "items#index", as: "items_available"
 
 
   resources :reviews
   resources :locations
-  resources :items, only: [:show, :new, :create]
+  resources :items, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :users, only: [:index, :new, :show, :create, :edit]
 
   # resources :users do

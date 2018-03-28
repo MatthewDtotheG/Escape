@@ -1,5 +1,9 @@
 class ReservationsController < ApplicationController
 
+  def edit
+    @reservation = Reservation.find(params[:id])
+  end
+
   def create
     @reservation = Reservation.new(item_id: params[:reservation][:item_id], rent_start: formatted_start_date, rent_end: formatted_end_date, buyer_id: session[:user_id])
     if @reservation.save
@@ -11,16 +15,16 @@ class ReservationsController < ApplicationController
 
   def update
     @reservation = Reservation.find(params[:id])
-    if @reservation = Reservation.update(reservation_params)
-      redirect_to @reservation
+    if @reservation.update(rent_start: formatted_start_date, rent_end: formatted_end_date)
+      redirect_to user_path(session[:user_id])
     else
       render :edit
     end
   end
 
   def destroy
-      Item.destroy(params[:id])
-      redirect_to @item
+      Reservation.destroy(params[:id])
+      redirect_to user_path(session[:user_id])
   end
 
   private
