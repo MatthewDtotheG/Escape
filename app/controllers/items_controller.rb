@@ -19,8 +19,9 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    byebug
     if @item.save
-      redirect_to @item
+      redirect_to '/'
     else
       render :new
     end
@@ -43,7 +44,7 @@ class ItemsController < ApplicationController
 private
 
   def item_params
-    params.require(:item).permit(:name, :description, :price, :seller_id)
+    params.require(:item).permit(:name, :description, :price, :seller_id, :category)
   end
 
 end

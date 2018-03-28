@@ -4,6 +4,11 @@ class Item < ApplicationRecord
   has_many :reviews, :through => :reservations
   has_many :buyers, :class_name => "User", :through => :reservations
 
+
+  def self.all_categories
+    ["Winter Sports", "Camping & Hiking", "Water Sports"]
+  end
+
   def self.sort_by_price_asc
     order(:price)
   end
