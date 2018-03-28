@@ -1,6 +1,6 @@
 
 <!-- Display user profile if buyer display bought items -->
-<% if seller_check = true %>
+
 <div class="container">
 
   <div class="profile_info">
@@ -10,14 +10,53 @@
     <h2> <%= @user.location.name %></h2>
   </div>
 
+<% if seller_check = true %>
+
     <div class="row">
+      <% @user.items.each do |item|%>
       <div class="card right" style="width: 30%;">
+        <img class="card-img-top" src="/IMG1.jpg" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text">
+            <%= link_to item.name, item_path(item.id) %>
+            <%= item.description %>
+          </p>
+        </div>
+        <% end %>
+      </div>
+
+<% end %>
+      <!-- <div class="card right" style="width: 30%;">
         <img class="card-img-top" src="/IMG1.jpg" alt="Card image cap">
         <div class="card-body">
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
       </div>
 
+      <div class="card" style="width: 30%;">
+        <img class="card-img-top" src="/IMG1.jpg" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div> -->
+
+ <!--  Buyer check instead -->
+
+<% if buyer_check = true %>
+
+    <div class="row">
+      <% @user.rentals.each do |item|%>
+      <div class="card right" style="width: 30%;">
+        <img class="card-img-top" src="/IMG1.jpg" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text">
+            <%= link_to item.name, item_path(item.id) %>
+            <%= item.description %>
+          </p>
+        </div>
+        <% end %>
+      </div>
+<!--
       <div class="card right" style="width: 30%;">
         <img class="card-img-top" src="/IMG1.jpg" alt="Card image cap">
         <div class="card-body">
@@ -31,32 +70,7 @@
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
       </div>
-
-<% else %> <!--  Buyer check instead -->
-
-  <div class="row">
-
-    <div class="card right" style="width: 30%;">
-      <img class="card-img-top" src="/IMG1.jpg" alt="Card image cap">
-      <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-    </div>
-
-    <div class="card right" style="width: 30%;">
-      <img class="card-img-top" src="/IMG1.jpg" alt="Card image cap">
-      <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-    </div>
-
-    <div class="card" style="width: 30%;">
-      <img class="card-img-top" src="/IMG1.jpg" alt="Card image cap">
-      <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-    </div>
-  </div>
+    </div> -->
 <% end %>
 
 <div class="BREAK"></div>
