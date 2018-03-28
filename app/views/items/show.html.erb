@@ -1,3 +1,11 @@
+<% if flash[:notice] %>
+  <div class="notice">
+    <% flash[:notice].each do |notice| %>
+      <%= notice %>
+    <% end %>
+  </div>
+<% end %>
+
 <h1><strong><%= @item.name.capitalize %></strong></h1>
 <h5><strong>Description:</strong></h5>
 <p><%= @item.description.capitalize %><p>
@@ -6,7 +14,7 @@
 <p>$<%= @item.price %><p>
 
 
-<%= form_for @item.reservations.build do |f| %>
+<%= form_for @reservation do |f| %>
   <%= f.label "Rent Start Date" %><br>
   <%= f.date_select :rent_start, :start_year => Date.current.year, :end_year =>  Date.current.year + 10, :use_two_digit_numbers => true %><br></br>
   <%= label_tag "Rent End Date" %><br>

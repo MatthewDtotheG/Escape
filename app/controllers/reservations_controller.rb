@@ -9,6 +9,8 @@ class ReservationsController < ApplicationController
     if @reservation.save
       redirect_to items_available_path
     else
+      # @item = @reservation.item
+      flash[:notice] = @reservation.errors.full_messages
       redirect_to "/items/#{params[:reservation][:item_id]}"
     end
   end
