@@ -4,6 +4,9 @@ class Item < ApplicationRecord
   has_many :reviews, :through => :reservations
   has_many :buyers, :class_name => "User", :through => :reservations
 
+  def self.image_grabber(category)
+    Dir["./public/#{category}/*"].sample.split("/").last
+  end
 
   def self.all_categories
     ["Winter Sports", "Camping & Hiking", "Water Sports"]
