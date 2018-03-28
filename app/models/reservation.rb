@@ -4,17 +4,27 @@ class Reservation < ApplicationRecord
   belongs_to :buyer, :class_name => "User"
   has_one :review
 
-  def available(start_date, end_date)
-    if end_date > rent_start && end_date < rent_end
-      false
-    elsif start_date < rent_end && start_date > rent_start
-      false
-    elsif rent_start < start_date && end_date < rent_end
-      false
-    elsif start_date < rent_start && rent_end < end_date
-      false
-    else
-      true
+  validate :available?, :rent_start_after_rent_end?
+
+  def available?
+    Reservation.where(item_id: item.id).where.not(id: id).each do |r|
+      if r.rent_end >= rent_start && r.rent_end <= rent_end
+        errors.add(:base, "Sorry, this place isn't available during your requested dates.")
+      elsif r.rent_start <= rent_end && r.rent_start >= rent_start
+        errors.add(:base, "Sorry, this place isn't available during your requested dates.")
+      elsif rent_start <= r.rent_start && r.rent_end <= rent_end
+        errors.add(:base, "Sorry, this place isn't available during your requested dates.")
+      elsif r.rent_start <= rent_start && rent_end <= r.rent_end
+        errors.add(:base, "Sorry, this place isn't available during your requested dates.")
+      else
+        true
+      end
+    end
+  end
+
+  def rent_start_after_rent_end?
+    if rent_end <= rent_start
+      errors.add(:base, "Rent end date has to be after the start!")
     end
   end
 

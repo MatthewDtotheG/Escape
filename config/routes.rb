@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root 'welcome#welcome'
+  resources :reservations, only: [:create]
   get "items/available", to: "items#index", as: "items_available"
-  resources :reservations
+
+
   resources :reviews
   resources :locations
   resources :items, only: :show
