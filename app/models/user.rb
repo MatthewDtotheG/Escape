@@ -4,11 +4,15 @@ class User < ApplicationRecord
   has_many :items, :foreign_key => "seller_id"
   belongs_to :location
   has_many :reviews, :foreign_key => "buyer_id"
-  has_many :reservations, through: :items
+  has_many :reservations, :foreign_key => "buyer_id"
+
 
   validates :name, :username, :email, :age, :location, :password_digest, presence: true
   validates :username, :email, uniqueness: true
 
+  def rentals
+    reservations.map {|res| res.item}
+  end
 
   def seller_check
     sellers = Item.all.map {|x| x.seller_id}
