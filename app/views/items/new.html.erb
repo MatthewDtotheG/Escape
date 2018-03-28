@@ -5,7 +5,7 @@
   <%= f.text_field :name%><br>
   <%= f.label :description %> <br>
   <%= f.text_field :description%><br>
-  <%= f.label "Price per Day" %><br>
+  <%= f.label "Price per Day:" %><br>
   <%= f.number_field :price%><br></br>
   <%= f.select :category, options_for_select(Item.all_categories) %><br>
   <%= f.hidden_field :seller_id, value: session[:user_id] %><br>

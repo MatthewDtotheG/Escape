@@ -1,7 +1,11 @@
 class ItemsController < ApplicationController
 
   def index
-    @items = Item.all
+    if !params[:category].nil? && Item.all_categories.include?(params[:category])
+      @items = Item.where(category: params[:category])
+    else
+      @items = Item.all
+    end
   end
 
   def new
@@ -19,8 +23,9 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    byebug
     if @item.save
-      redirect_to "/users/#{session[:user_id]}"
+      redirect_to '/'
     else
       render :new
     end
