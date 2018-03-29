@@ -1,8 +1,9 @@
 class Item < ApplicationRecord
   belongs_to :seller, :class_name => "User"
-  has_many :reservations
+  has_many :reservations, dependent: :destroy
   has_many :reviews, :through => :reservations
   has_many :buyers, :class_name => "User", :through => :reservations
+
 
   def image_grabber
     Dir["./public/#{self.category}/*"].sample.split("public").last
