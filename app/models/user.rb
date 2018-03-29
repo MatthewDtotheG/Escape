@@ -29,7 +29,7 @@ class User < ApplicationRecord
   end
 
   def location_name
-    self.location
+    self.location.name
   end
 
   def avg_rating
