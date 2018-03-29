@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :reviews
   resources :locations
   resources :items, only: [:show, :new, :create, :edit, :update, :destroy]
-  resources :users, only: [:index, :new, :show, :create, :edit]
+  resources :users, only: [:index, :new, :show, :create, :edit, :update]
 
   resources :items, only: :show do
     get '/reservations', to: "reservations#items_reservations"

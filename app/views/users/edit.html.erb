@@ -1,0 +1,21 @@
+
+<div class="bg1">
+
+    <div class="container">
+      <div class="row">
+        <div class="form-group col-lg-5">
+          <div class="create_account">
+            <% if flash[:notice] %>
+              <div class="notice">
+                <% flash[:notice].each do |notice| %>
+                  <br><%= notice %><br>
+                <% end %>
+              </div>
+            <% end %>
+            <h1>Please create an account</h1>
+            <%= render "form" %>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
