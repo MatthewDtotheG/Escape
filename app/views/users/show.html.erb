@@ -18,12 +18,13 @@
     <div class="row">
       <% @user.items.each do |item|%>
       <div class="card right" style="width: 30%;">
-        <img class="card-img-top" src="/IMG1.jpg" alt="Card image cap">
+        <img class="card-img-top" src="<%=item.image_grabber %>" alt="Card image cap">
         <div class="card-body">
           <p class="card-text">
-            <%= link_to item.name.capitalize, edit_item_path(item.id) %> <br>
-            <%= item.description.capitalize %><br>
-            <%= link_to "delete", item_path(item.id), method: :delete%><br>
+            <%= item.name.capitalize %> <br>
+            <%= link_to "Edit Item", edit_item_path(item.id) %> <br>
+            <%= link_to "All Reservations", item_reservations_path(item.id) %><br>
+            <%= link_to "Delete this Item", item_path(item.id), method: :delete%><br>
           </p>
         </div>
       </div>
@@ -38,14 +39,14 @@
     <div class="row">
       <% @user.reservations.each do |res|%>
       <div class="card right" style="width: 30%;">
-        <img class="card-img-top" src="/IMG1.jpg" alt="Card image cap">
+        <img class="card-img-top" src="<%= res.item.image_grabber %>" alt="Card image cap">
         <div class="card-body">
           <p class="card-text">
             <%= link_to res.item.name.capitalize, edit_reservation_path(res.id) %> <br>
             <%= res.item.description.capitalize %> <br>
-            <%= link_to "Delete", reservation_path(res.id), method: :delete%> <br>
-            <label> Reservation Dates:</label><br>
-            <%= res.rent_start.strftime("%B %e, %Y") %> - <%= res.rent_end.strftime("%B %e, %Y") %>
+            <%= "Reservation Dates:" %> <br>
+            <%= res.format_rent_start %> - <%= res.format_rent_end %> <br>
+            <%= link_to "Delete this Reservation", reservation_path(res.id), method: :delete%> <br>
           </p>
         </div>
       </div>
