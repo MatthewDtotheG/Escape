@@ -5,20 +5,26 @@
     <% end %>
   </div>
 <% end %>
+<div class="bg">
+  <div class="container">
+    <div class="row">
+      <div class="form-group col-lg-5">
+        <div class="rent_item">
+          <h1><strong><%= @item.name.capitalize %></strong></h1>
+          <h5><strong>Description:</strong></h5>
+          <p><%= @item.description.capitalize %><p>
 
-<h1><strong><%= @item.name.capitalize %></strong></h1>
-<h5><strong>Description:</strong></h5>
-<p><%= @item.description.capitalize %><p>
-
-<h5><strong>Price/Day:</strong></h5>
-<p>$<%= @item.price %><p>
+          <h5><strong>Price/Day:</strong></h5>
+          <p>$<%= @item.price %><p>
 
 
-<%= form_for @reservation do |f| %>
-  <%= f.label "Rent Start Date" %><br>
-  <%= f.date_select :rent_start, :start_year => Date.current.year, :end_year =>  Date.current.year + 10, :use_two_digit_numbers => true %><br></br>
-  <%= label_tag "Rent End Date" %><br>
-  <%= f.date_select :rent_end, :start_year => Date.current.year, :end_year =>  Date.current.year + 10, :use_two_digit_numbers => true %><br></br>
-  <%= f.hidden_field :item_id, value: @item.id %>
-  <%= f.submit "Rent" %>
-<% end  %>
+          <%= form_for @reservation do |f| %>
+            <%= f.label "Rent Start Date" %><br>
+            <%= f.date_select :rent_start, :start_year => Date.current.year, :end_year =>  Date.current.year + 10, :use_two_digit_numbers => true, :class => 'form-control' %><br></br>
+            <%= label_tag "Rent End Date" %><br>
+            <%= f.date_select :rent_end, :start_year => Date.current.year, :end_year =>  Date.current.year + 10, :use_two_digit_numbers => true, :class => 'form-control' %><br></br>
+            <%= f.hidden_field :item_id, value: @item.id %>
+            <%= f.submit "Rent", :class => 'btn btn-primary' %>
+          <% end  %>
+  </div>
+</div>
