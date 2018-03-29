@@ -1,12 +1,14 @@
-<% if flash[:notice] %>
-  <div class="notice">
-    <% flash[:notice].each do |notice| %>
-      <br><%= notice %><br>
-    <% end %>
-  </div>
-<% end %>
 <div class="bg">
   <div class="container">
+
+    <% if flash[:notice] %>
+      <div class="notice">
+        <% flash[:notice].each do |notice| %>
+          <br><%= notice %><br>
+        <% end %>
+      </div>
+    <% end %>
+
     <div class="row">
       <div class="form-group col-lg-5">
         <div class="rent_item">

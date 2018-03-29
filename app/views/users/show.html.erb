@@ -16,7 +16,7 @@
     <div class="row">
       <% @user.items.each do |item|%>
       <div class="card right" style="width: 30%;">
-        <img class="card-img-top" src="/IMG1.jpg" alt="Card image cap">
+        <img class="card-img-top" src=" <%= item.image_grabber%>" alt="Card image cap">
         <div class="card-body">
           <p class="card-text">
             <%= link_to item.name.capitalize, edit_item_path(item.id) %> <br>
@@ -36,7 +36,7 @@
     <div class="row">
       <% @user.reservations.each do |res|%>
       <div class="card right" style="width: 30%;">
-        <img class="card-img-top" src="/IMG1.jpg" alt="Card image cap">
+        <img class="card-img-top" src="<%= res.item.image_grabber %>" alt="Card image cap">
         <div class="card-body">
           <p class="card-text">
             <%= link_to res.item.name.capitalize, edit_reservation_path(res.id) %> <br>
