@@ -24,16 +24,47 @@
   </div>
 
 
+<div class="container">
+  <div class="rig">
+        <a id="arrow" href="/items/available">
+            <li class="rig-cell">
+              <img class="rig-img" src='/IMG1.jpg'>
+              <span id="FILM1" class="rig-overlay"></span>
+              <span class="rig-text1">View all rentals</span>
+            </li>
+        </a>
+        
+        <% if !logged_in? %>
+          <a href="users/new">
+            <li class="rig-cell1">
+              <img class="rig-img" src='/IMG2.jpg'>
+              <span id="DIGITAL1" class="rig-overlay"></span>
+              <span class="rig-text">Rent your equipment</span>
+            </li>
+          </a>
+        <% else %>
+          <a href="/items/new" class="rentals1">
+            <li class="rig-cell1">
+              <img class="rig-img" src='/IMG2.jpg'>
+              <span id="DIGITAL1" class="rig-overlay"></span>
+              <span class="rig-text">Rent your equipment</span>
+            </li>
+          </a>
+        <% end %>
 
-    <div class="container">
+    </div>
+</div>
+
+
+    <!-- <div class="container">
 
         <a id="arrow" href="/items/available" class="rentals">
           <div >
               View all rentals
           </div>
           <img src="/IMG1.jpg" class="rounded test" alt="...">
-        </a>
-
+        </a> -->
+<!--
         <% if !logged_in? %>
             <a href="users/new" class="rentals1">
               <div >
@@ -50,7 +81,7 @@
             <img src="/IMG2.jpg" class="rounded test" alt="...">
           </a>
         <% end %>
-    </div>
+    </div> -->
 
 
     <footer>

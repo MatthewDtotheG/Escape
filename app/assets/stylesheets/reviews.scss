@@ -1,3 +1,86 @@
 // Place all the styles related to the reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* The wrapper for each item */
+.rig-cell, .rig-cell1 {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 300px;
+}
+
+.rig-cell1 {
+  float: right;
+}
+
+/* If have the image layer */
+.rig-img {
+  display: inline-block;
+  height: auto;
+  border: none;
+  transform: scale(1);
+  transition: all 1s; }
+
+.rig li:hover .rig-img {
+  transform: scale(1.05);
+
+}
+
+/* GRAYS OUT THE IMAGE */
+.rig-overlay {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #151515 no-repeat center 20%;
+  background-size: 50px 50px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  /*For IE6 - IE8*/
+  transition: all 0.6s;
+   }
+
+.rig li:hover .rig-overlay {
+  opacity: 0.5;
+  }
+
+/* PULLS IN THE TEXT / ICON */
+.rig-text, .rig-text1 {
+  display: block;
+  padding: 0px;
+  box-sizing: border-box;
+  position: absolute;
+  margin-left: 50px;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 45px;
+  font-weight: bold;
+  font-weight: normal !important;
+  top: 40%;
+  color: white;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  /*For older IE*/
+  transform: translateY(-20px);
+  transition: all .3s;
+
+}
+
+.rig-text1 {
+  margin-left: 100px;
+}
+
+.rig li:hover .rig-text {
+  transform: translateY(0px);
+  opacity: 0.9;
+  text-align: center;
+ }
+
+ .rig li:hover .rig-text1 {
+   transform: translateY(0px);
+   opacity: 0.9;
+   text-align: center;
+  }
