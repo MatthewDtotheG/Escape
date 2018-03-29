@@ -5,13 +5,7 @@
       <div class="row">
         <div class="form-group col-lg-5">
           <div class="create_account">
-            <% if flash[:notice] %>
-              <div class="notice">
-                <% flash[:notice].each do |notice| %>
-                  <br><%= notice %><br>
-                <% end %>
-              </div>
-            <% end %>
+            <%= render "items/errorflash" %> 
             <h1>Please create an account</h1>
             <%= render "form" %>
           </div>

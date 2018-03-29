@@ -46,6 +46,7 @@
             <%= res.item.description.capitalize %> <br>
             <%= "Reservation Dates:" %> <br>
             <%= res.format_rent_start %> - <%= res.format_rent_end %> <br>
+            <%= link_to "Edit this Reservation", edit_reservation_path(res.id) %><br>
             <%= link_to "Delete this Reservation", reservation_path(res.id), method: :delete%> <br>
           </p>
         </div>
