@@ -1,10 +1,14 @@
-<% if !@reservations.empty?  %>
-  <% @reservations.each do |res| %>
-    <h3> Rent dates: </h3>
-    <%= res.format_rent_start %> - <%= res.format_rent_end %>
-    <h3> Renter: </h3>
-    <%= res.buyer.username %><br>
+<div class="bg1">
+<div class="container">
+  <% if !@reservations.empty?  %>
+    <% @reservations.each do |res| %>
+      <h3> Rent dates: </h3>
+      <%= res.format_rent_start %> - <%= res.format_rent_end %>
+      <h3> Renter: </h3>
+      <%= res.buyer.username %><br>
+    <% end  %>
+  <% else %>
+    <h2>No one has reserved your item!</h2>
   <% end  %>
-<% else %>
-  <h2>No one has reserved your item!</h2>
-<% end  %>
+  </div>
+</div>
