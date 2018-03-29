@@ -30,6 +30,10 @@
   color: black;
 }
 
+.rent_item {
+  color: black;
+}
+
 .form-control {
   opacity: .8
 }
@@ -43,6 +47,17 @@
 }
 
 .login {
+  margin-left: 8%;
+
   float: right;
-  color: white;
+  color: black;
+
+  h1 {
+    margin-bottom: 15px;
+  }
+}
+
+
+.form_tag {
+  opacity: .5;
 }

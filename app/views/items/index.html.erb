@@ -4,24 +4,33 @@
 <div class="container">
 <br>
 
+  <div class="search">
     <%= form_tag items_available_path, method: "get" do%>
       <%= select_tag :category, options_for_select(Item.all_categories.unshift("All Categories")), :prompt => "Filter By Category"%>
       <%= submit_tag "Filter Search" %>
     <% end %>
     <br>
-
+  </div>
 
       <div class="row">
         <% @items.each do |item|%>
-        <div class="card right" style="width: 30%;">
-          <img class="card-img-top" src="<%= item.image_grabber %>" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text">
-            <%= link_to item.name, item_path(item.id) %>
-            <%= item.description %>
-           </p>
+
+          <div class="card right" style="width: 30%;">
+            <a href="/items/<%= item.id %>">
+            <img class="card-img-top" src="<%= item.image_grabber %>" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text">
+              <h3><%= item.name %></h3>
+              <%= item.description %>
+             </p>
+            </div>
+            </a>
+
           </div>
+          <% end %>
         </div>
-        <% end %>
-      </div>
+
   </div>
+
+  <footer>
+  </footer>
