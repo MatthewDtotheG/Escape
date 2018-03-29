@@ -1,17 +1,22 @@
 
 <!-- Display user profile if buyer display bought items -->
-<!-- THIS IS A TEST -->
+
+
+  <div class="PROFBG">
+
+  <div class="container">
+    <div class="profile_info">
+      <img class="profpic" src="/IMG2.jpg" alt="">
+      <div class="PROFTEXT">
+        <h2> <%= @user.username.capitalize %></h2>
+        <h2> <%= @user.location.name %></h2>
+        <h5> <%= link_to "Edit Account", edit_user_path %></h5>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="container">
-
-  <div class="profile_info">
-    <img class="profpic" src="/IMG2.jpg" alt="">
-    <h2> <%= @user.name.capitalize %></h2>
-    <h2> <%= @user.email.capitalize %></h2>
-    <h2> <%= @user.location.name %></h2>
-    <%= link_to "Edit Account", edit_user_path %>
-  </div>
-
 <% if seller_check = true %>
     <h1 class="center">Your rentals</h1>
 
