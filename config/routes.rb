@@ -13,6 +13,10 @@ Rails.application.routes.draw do
     get '/reservations', to: "reservations#items_reservations"
   end
 
+  resources :users, only: :show do
+    get '/reviews', to: "reviews#index"
+  end
+
   get "seller", to: "users#seller", as: "seller"
   get "login", to: "sessions#new", as: "login"
   get "logout", to: "sessions#destroy", as: "logout"
