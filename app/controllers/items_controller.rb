@@ -26,7 +26,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to '/'
     else
-      render :new
+      redirect_to "users/#{session[:user_id]}"
     end
   end
 
