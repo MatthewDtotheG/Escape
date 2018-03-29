@@ -1,1 +1,18 @@
-Hello World
+
+<div class="bg1">
+  <div class="container">
+     <% if @reviews.empty? %>
+        <h1>User has no prior reviews!</h1>
+     <% else %>
+      <% @reviews.each do |rev| %>
+        <h4><%= rev.reservation.item.name %></h4>
+        <h5>Rented From:</h5>
+        <%= rev.reservation.format_rent_start %> - <%= rev.reservation.format_rent_end %> <br>
+        <h5>Rating:</h5>
+        <%= rev.rating %> <br>
+        <h5>Review:</h5>
+        <%= rev.content %> <br>
+      <% end %>
+    <% end %>
+  </div>
+</div>

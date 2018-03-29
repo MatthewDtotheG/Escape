@@ -6,6 +6,13 @@
         <%= res.format_rent_start %> - <%= res.format_rent_end %>
         <h3> Renter: </h3>
         <%= res.buyer.username %> <%= link_to "(#{res.buyer.reviews.size})", user_reviews_path(res.buyer.id) %>
+        <% if res.format_rent_end < Time.now.strftime("%B %e, %Y")%>
+          <%= form_tag "/reviews/new", method: :get do %>
+            <%= hidden_field_tag :buyer_id, res.buyer.id %>
+            <%= hidden_field_tag :reservation_id, res.id %>
+            <%= submit_tag "Leave Feedback" %>
+          <% end %>
+        <% end %>
       <% end  %>
     <% else %>
       <h2>No one has reserved your item!</h2>
