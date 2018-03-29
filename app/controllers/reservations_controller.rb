@@ -7,13 +7,17 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = Reservation.new(item_id: params[:reservation][:item_id], rent_start: format_dropdown_start_date, rent_end: format_dropdown_end_date, buyer_id: session[:user_id])
-    if @reservation.save
-      redirect_to items_available_path
+    if !logged_in?
+      redirect_to new_user_path
     else
-      # @item = @reservation.item
-      flash[:notice] = @reservation.errors.full_messages
-      redirect_to "/items/#{params[:reservation][:item_id]}"
+      @reservation = Reservation.new(item_id: params[:reservation][:item_id], rent_start: format_dropdown_start_date, rent_end: format_dropdown_end_date, buyer_id: session[:user_id])
+      if @reservation.save
+        redirect_to items_available_path
+      else
+        # @item = @reservation.item
+        flash[:notice] = @reservation.errors.full_messages
+        redirect_to "/items/#{params[:reservation][:item_id]}"
+      end
     end
   end
 
