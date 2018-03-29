@@ -6,7 +6,9 @@
      <% else %>
       <% @reviews.each do |rev| %>
         <h4><%= rev.reservation.item.name %></h4>
-        <h5>Rented From:</h5>
+        <h5>Rented From User:</h5>
+        <%= rev.reservation.item.seller.username %>
+        <h5>From Dates:</h5>
         <%= rev.reservation.format_rent_start %> - <%= rev.reservation.format_rent_end %> <br>
         <h5>Rating:</h5>
         <%= rev.rating %> <br>
