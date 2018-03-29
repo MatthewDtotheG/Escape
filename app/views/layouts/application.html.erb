@@ -22,14 +22,20 @@
       <li class="nav-item">
         <a class="nav-link" href="/items/available">View Items</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/items/new">Rent your items</a>
-      </li>
+
 
         <% if !logged_in? %>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/new">Rent your items</a>
+          </li>
+
           <a class="nav-item nav-link" href="/login">Login</a>
           <a class="nav-item nav-link" href="/users/new">Create Account</a>
         <% else %>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/items/new">Rent your items</a>
+        </li>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
