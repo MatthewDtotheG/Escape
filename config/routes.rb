@@ -9,9 +9,10 @@ Rails.application.routes.draw do
   resources :items, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :users, only: [:index, :new, :show, :create, :edit]
 
-  # resources :users do
-  #   resources :items
-  # end
+  resources :items, only: :show do
+    get '/reservations', to: "reservations#items_reservations"
+  end
+
   get "seller", to: "users#seller", as: "seller"
   get "login", to: "sessions#new", as: "login"
   get "logout", to: "sessions#destroy", as: "logout"

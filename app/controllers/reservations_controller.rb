@@ -1,7 +1,5 @@
 class ReservationsController < ApplicationController
 
-  helper_method :format_datetime
-
   def edit
     @reservation = Reservation.find(params[:id])
   end
@@ -35,9 +33,9 @@ class ReservationsController < ApplicationController
       redirect_to user_path(session[:user_id])
   end
 
-
-  def format_datetime(date)
-    date.strftime("%B %e, %Y")
+  def items_reservations
+    @item = Item.find(params[:item_id])
+    @reservations = Reservation.where(item_id: params[:item_id]).order(:rent_start)
   end
 
   private

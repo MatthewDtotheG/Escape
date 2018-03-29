@@ -6,6 +6,14 @@ class Reservation < ApplicationRecord
 
   validate :available?, :rent_start_after_rent_end?, :rent_start_equal_rent_end?
 
+  def format_rent_start
+    rent_start.strftime("%B %e, %Y")
+  end
+
+  def format_rent_end
+    rent_end.strftime("%B %e, %Y")
+  end
+
   def available?
     if rent_start < rent_end
       Reservation.where(item_id: item.id).where.not(id: id).each do |r|
