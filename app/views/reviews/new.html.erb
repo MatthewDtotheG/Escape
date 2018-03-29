@@ -1,0 +1,13 @@
+<div class="bg1">
+  <div class="container">
+    <%= form_for @review do |f| %>
+      <%= f.label "Rate the User on a scale of 1-5:" %><br>
+      <%= f.select :rating, options_for_select([1,2,3,4,5]), :class => 'form-control' %><br></br>
+      <%= f.label "Review the User below:" %><br>
+      <%= f.text_field :content %><br></br>
+      <%= f.hidden_field :buyer_id, value: @buyer_id %>
+      <%= f.hidden_field :reservation_id, value: @reservation_id %>
+      <%= f.submit "Submit Feedback", :class => 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

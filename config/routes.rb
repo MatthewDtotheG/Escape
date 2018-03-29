@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get "items/available", to: "items#index", as: "items_available"
 
 
-  resources :reviews
+  resources :reviews, only: [:index, :new, :create]
   resources :locations
   resources :items, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :users, only: [:index, :new, :show, :create, :edit, :update]
