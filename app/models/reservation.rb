@@ -31,7 +31,7 @@ class Reservation < ApplicationRecord
   end
 
   def rent_start_equal_rent_end?
-    if rent_end = rent_start
+    if rent_end == rent_start
       errors.add(:base, "Have to rent for more than one day!")
     end
   end
