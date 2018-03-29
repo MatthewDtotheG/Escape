@@ -5,6 +5,7 @@
 
 
 .profile_info {
+  margin-top: 50px;
   text-align: left;
   margin-bottom: 90px;
   width: 100%;
@@ -52,6 +53,11 @@
   }
 }
 
+select {
+  height: 30px;
+  margin-right: 20px;
+}
+
 .create_account {
   color: black;
 }
@@ -88,6 +94,10 @@
   opacity: .5;
 }
 
-.float_right {
-  
+.notice {
+  margin-top: 50px;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 20px;
+  color: red;
 }

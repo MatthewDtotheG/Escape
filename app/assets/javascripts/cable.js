@@ -34,12 +34,7 @@ $(function(){
   });
 });
 
-let box2 = {
-  origin : 'bottom',
-  delay    : 200,
-  distance : '200px',
-  easing   : 'ease-in-out',
-};
 
-window.sr = ScrollReveal();
-sr.reveal('.box2', box2);
+$(function() {
+  window.scrollReveal = new scrollReveal();
+});
