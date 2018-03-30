@@ -17,7 +17,7 @@
 </div>
 
 <div class="container">
-<% if seller_check = true %>
+<% if @user.seller_check == true %>
     <h1 class="center">Your rentals</h1>
 
     <div class="row">
@@ -38,7 +38,7 @@
   <% end %>
 
 
-<% if buyer_check = true %>
+<% if @user.buyer_check == true %>
     <h1 class="center">Your Reservations</h1>
     <div class="row">
       <% @user.reservations.each do |res|%>
