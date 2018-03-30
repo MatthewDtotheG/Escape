@@ -35,6 +35,10 @@
   margin-bottom: 80px;
 }
 
+.center {
+  margin: 50px;
+}
+
 .center, .login_form {
   text-align: center;
 }
@@ -43,6 +47,7 @@
   margin-top: 22%;
   color: black;
   font-weight: bold;
+
   input {
     border-radius: 5px;
     opacity: .8;
@@ -52,6 +57,10 @@
     margin-right: 30px;
   }
 }
+
+
+
+
 
 select {
   height: 30px;
