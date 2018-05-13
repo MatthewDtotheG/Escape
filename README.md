@@ -17,6 +17,7 @@ rails s
 Visit localhost:3000 in your browser to begin using the application.
 
 User Experience
+
 Once the user has navigated to the Escape homepage, they may click the "Create Account" tab to create a personal Escape account. If they already have an account, they may sign in with their already existing username and password. Once signed in, the user can choose to navigate to pages that allow them to post their own items for rent, or browse all the the items being rented out by other users. Items posted on Escape feature the name of the item, a short description, a price/day of rental, and a reservation form. After reviewing the form, a user can press "Rent" to complete the reservation.
 
 From the homepage, a user can click on the "Rent Items" button to post one of their items for rent. Following this, they will be presented with a form to list the item. After completing the necessary fields, the user can press the "Create Item."
@@ -26,7 +27,9 @@ A user also has access to a profile page, that lists all of the items they are r
 Authors
 
 Matthew Garrett- MatthewDtotheG
+
 Kenneth Lehr  - kenman21
 
 Acknowledgements
+
 This is a pair programming assignment at the Flatiron School. Thanks to instructors Howard, Tashawn and Garry for their help along the way.
