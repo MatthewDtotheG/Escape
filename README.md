@@ -1,7 +1,9 @@
 Escape
+
 Escape is an outdoor rental equipment application where users can create accounts, post their equipment for rent or choose to rent another user's equipment.
 
 Installing
+
 To start the Escape application, cd into the Escape directory and run the following:
 
 bundle install
