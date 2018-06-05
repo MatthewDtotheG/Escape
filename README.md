@@ -24,6 +24,10 @@ From the homepage, a user can click on the "Rent Items" button to post one of th
 
 A user also has access to a profile page, that lists all of the items they are renting out, as well as all of the reservations they currently have active. From this page, a user has the option to edit or delete any reservation or listing they have created. In addition, if a user's items have been rented, they have the option of leaving a feedback review for the customer that rented their item. Any user has access to their own reviews via their profile page.
 
+A demo of the application can be found here: 
+
+https://youtu.be/uooUwGvgHos
+
 Authors
 
 Matthew Garrett- MatthewDtotheG
